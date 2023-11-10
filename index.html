@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Makeup Box</title>
+    <link rel="stylesheet" href="index.css" /> <!-- Link to the CSS file -->
+    <script src="fetchapi.js"></script> <!-- Fetch API Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Brush+Script" rel="stylesheet"> <!-- Font import -->
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Home</a> <!-- Navigation link to Home -->
+      <a href="crud.html">Top 5</a> <!-- Navigation link to Top 5 -->
+    </div>
+
+    <center>
+      <br><br><br>
+      <h1>The Beauty Palette</h1> <!-- Main header -->
+      <br>
+      <div class="desc">Pick your favourite make-up now!</div> <!-- Description -->
+      <br><br>
+      <select id="brandDropdown" onchange="getProductsByBrand()">
+        <option disabled selected>Brand</option> <!-- Default placeholder for brand dropdown -->
+      </select>
+      <select id="productTypeDropdown" onchange="getProductsByType()">
+        <option disabled selected>Product Type</option> <!-- Default placeholder for product type dropdown -->
+      </select>
+    </center>
+
+    <!-- Modal HTML structure -->
+    <div id="makeupModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span> <!-- Modal close button -->
+        <div id="descriptionContainer">
+          <b>Product Type:</b> <span id="productTypeSpan"></span>
+          <br><br>
+          <b>Description:</b> <span id="descriptionSpan"></span>
+          <br><br>
+          <b>Product Link:</b> <span id="productLinkSpan"></span>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <ul id="productList"></ul> <!-- Product list container -->
+  </body>
+</html>

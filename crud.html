@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>CRUD App</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="photon.min.css" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Home</a> <!--navigation bar menu-->
+    <a href="crud.html">Top 5</a>
+    <a href="javascript:history.go(-1)">Back</a>
+  </div>
+
+<div class="mainWrapper">
+    <br><br>
+    <h1>Top 5 Favourite Make-Up</h1>
+    <br>
+    <center>
+    <div class="desc">Tell me your Top 5 make-up brand!</div>
+      <form>
+  <div class="containerCRUD">
+        <div class="form-group"> <!--form for file name and make-up brand-->
+          <b><label>File name</label></b>
+          <input id="fileName" type="text" class="form-control" readonly value="brand.txt">
+        </div>
+        <br>
+        <div class="form-group">
+          <b><label>Make-Up Brand</label></b>
+          <textarea id="fileContents" class="form-control" rows="5"></textarea>
+        </div>
+      </form>
+  </div>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <!--button for create update read-->
+      <button id="btnCreate" class="btn btn-default">Create</button>
+      <button id="btnRead" class="btn btn-default">Read</button>
+      <button id="btnUpdate" class="btn btn-default">Update</button>
+      <br><br>
+      <table id="fileTable" class="table" style="display: none;">
+        <thead>
+          <!--table to display top 5 brand-->
+          <tr>
+            <th>No.</th>
+            <th>Brands</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="fileTableBody">
+          <!-- Table rows will be added dynamically here -->
+        </tbody>
+      </table>
+    </center>
+</div>
+  <script src="crud.js"></script>
+</body>
+</html>

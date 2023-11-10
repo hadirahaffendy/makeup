@@ -1,0 +1,323 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-image: url('makeup.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Style for the select dropdowns */
+select {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  width: 200px;
+  cursor: pointer;
+  background: #fff;
+  color: #000000;
+}
+
+/* Creating the arrow on the right */
+select::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Hover effect for the dropdown */
+select:hover {
+  border-color: #f19fcf;
+}
+
+/* Focus effect for the dropdown */
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(210, 45, 133, 0.6);
+}
+
+/* Style the options within the dropdown */
+select option {
+  padding: 10px;
+  color: #333;
+  background: #fff;
+}
+
+/* New hover state for the options */
+select option:hover {
+  background-color: #f19fcf;
+  color: #fff;
+}
+
+/* Style for the navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #d22d85;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* untuk tukar warna button tu bila cursor kena kt situ*/
+.navbar a:hover {
+  background-color: #f19fcf;
+}
+
+.button-container {
+  position: absolute;
+  margin-top: 20px;
+  top: 10px;
+  right: 10px;
+}
+
+.top-right-button {
+  padding: 10px 20px;
+  background-color: #d22d85;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style for the product list */
+ul#productList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamic grid layout */
+  gap: 20px; /* Increased gap between grid items */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Update the product container styles */
+ul#productList li {
+  background-color: rgba(236, 136, 189, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.3s ease; /* Smooth transition on hover */
+  margin-bottom: 20px; /* Space between each product container */
+  color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+/* Style for the form container */
+.form-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the "Search" button */
+button {
+  background-color: #d22d85; /* Dark pink button */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+button:hover {
+  background-color: #f19fcf;
+}
+
+/* Style for the input field and dropdown */
+input[type="text"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/* Style for the "Hello" heading */
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Use the imported font */
+  color: #b41d6e;
+  text-align: center;
+}
+
+/* Style for the product description text */
+h2 {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+h4 {
+  color: #c6468a;
+}
+
+p {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+/* Style for the image */
+img {
+  max-width: 100%;
+  border-radius: 5px;
+  display: block; /* Ensures image is block-level */
+  margin: auto; /* Center horizontally */
+  padding-bottom: 20px;
+}
+
+/* Style for the product container on hover */
+.product-container:hover {
+  transform: scale(1.05); /* Enlarge on hover for a zoom effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Highlight shadow on hover */
+}
+
+/* Style for product container box */
+.product-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer; /* Add pointer cursor for interaction */
+}
+
+/* Smooth transition on image scaling */
+.product-container img {
+  transition: transform 0.3s ease;
+}
+
+/* Enlarge image on hover */
+.product-container img:hover {
+  transform: scale(1.1);
+}
+
+/* Style for product links */
+.product-container a {
+  color: #d22d85; /* Change link color */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Change link color on hover */
+.product-container a:hover {
+  color: #f19fcf;
+}
+
+/* CSS to control the modal display */
+.modal {
+  display: none; /* Initially hide the modal */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+#descriptionContainer {
+  color: black;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Adjust width to your preference */
+  color: grey; /* Change the text color to grey */
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* setting table bila dia nak display balik */
+table {
+  width: 37%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/*container untuk kt crud.html*/
+.containerCRUD {
+  padding: 40px;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(241, 159, 207, 0.5); /* Pink with 50% opacity */
+  margin-top: 30px;
+  margin-left: 575px;
+  max-width: 600px;
+  position: absolute;
+}
+
+/*setting untuk tulisan dalam container kt crud.html*/
+.form-group {
+  color: #b41d6e;
+}
+
+.desc {
+  color: #b41d6e;
+  font-size: 16px;
+}
